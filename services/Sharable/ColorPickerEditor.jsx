@@ -10,7 +10,6 @@ function ColorPickerEditor({value, onColorChange}) {
         className=''
         />
 
-
         <CirclePicker
         color={value}
         onChange={(e)=>onColorChange(e.hex)}

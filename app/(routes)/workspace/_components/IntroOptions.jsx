@@ -34,7 +34,7 @@ function IntroOptions() {
   return (
     <div>
     <div className='relative'>
-        <Image src={'/thumbnail.png'} alt='banner' width={'1800'} height={300}
+        <Image src={'/thumbnail.png'} alt='banner' width={1800} height={300}
         className='w-full h-[200px] rounded-2xl object-cover'
         />
         <h2 className='text-3xl absolute bottom-5 left-10 text-white'>Workspace</h2>
