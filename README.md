@@ -22,3 +22,6 @@ This full-stack app uses NEXT JS and Convex for the backend and React for the fr
 
 In order to run backend I use command "npx convex dev"
 
+The backend schema and related files for this project currently reside in a separate repository: https://github.com/AtchayRM/Chayva-Capstone.git
+All schema definitions (including the Convex schema.js file) and backend logic are implemented there.
+These backend files will be merged into the main capstone repository before final submission to keep everything consolidated.
