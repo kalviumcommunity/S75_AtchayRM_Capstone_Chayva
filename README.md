@@ -14,3 +14,11 @@ This full-stack app uses NEXT JS and Convex for the backend and React for the fr
 - Day 5: Connect frontend with backend
 - Day 6: Testing & bug fixing
 - Day 7: Final video, polish, and submission
+
+## 🚀 Deployment Details
+
+- **Backend:** Hosted on Convex (serverless platform)
+  - [Convex Dashboard – Designs Table](https://dashboard.convex.dev/t/atchay/chayva-2f8b9/wry-capybara-940/data?table=designs)
+
+In order to run backend I use command "npx convex dev"
+
