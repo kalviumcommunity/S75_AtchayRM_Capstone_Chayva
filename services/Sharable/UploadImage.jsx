@@ -33,7 +33,7 @@ function UploadImage() {
       canvasImageRef.set ({
 width : 200,
 height: 200,
-scaleX: 1,
+scaleX: 2,
 scaleY: 1
       })
       canvasEditor.add(canvasImageRef);
