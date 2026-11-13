@@ -15,6 +15,7 @@ function RecentDesign() {
 
     const [editingId, setEditingId] = useState(null);
     const [newName, setNewName] = useState("");
+    const [isSaving, setIsSaving] = useState(false);
 
     // GET USER DESIGNS
     const designs = useQuery(
@@ -28,15 +29,21 @@ function RecentDesign() {
 
     // UPDATE DESIGN
     const handleUpdate = async (id) => {
-        if (!newName.trim()) return;
+        if (!newName.trim() || isSaving) return;
 
-        await updateDesign({
-            id: id,
-            name: newName.trim()
-        });
+        try {
+            setIsSaving(true);
 
-        setEditingId(null);
-        setNewName("");
+            await updateDesign({
+                id: id,
+                name: newName.trim()
+            });
+
+            setEditingId(null);
+            setNewName("");
+        } finally {
+            setIsSaving(false);
+        }
     };
 
     // DELETE DESIGN
@@ -91,14 +98,16 @@ function RecentDesign() {
 
                                     <Button
                                         className='mt-2'
+                                        disabled={!newName.trim() || isSaving}
                                         onClick={() => handleUpdate(design._id)}
                                     >
-                                        Save
+                                        {isSaving ? "Saving..." : "Save"}
                                     </Button>
 
                                     <Button
                                         variant='outline'
                                         className='mt-2 ml-2'
+                                        disabled={isSaving}
                                         onClick={() => {
                                             setEditingId(null);
                                             setNewName("");
